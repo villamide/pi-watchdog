@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const cors = require('cors');
 const axios = require('axios');
 
-router.get('/watchdog', function(req, res, next) {
+router.get('/watchdog', cors(), function(req, res, next) {
 	console.log("Get on / " + req)
 	axios.get("https://ifconfig.co/json")
 		.then(response => {
