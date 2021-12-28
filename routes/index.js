@@ -7,15 +7,11 @@ router.get('/watchdog', function(req, res, next) {
 	axios.get("https://ifconfig.co/json")
 		.then(response => {
 			console.log(response.data)
-			res.send(response.data)
+			res.json(response.data)
 		})
 		.catch(error => {
 			console.error(error)
 			res.send(error)
 		})
 });
-
-/* GET home page. */
-router.get('/', function(req, res, next) {});
-
 module.exports = router;
